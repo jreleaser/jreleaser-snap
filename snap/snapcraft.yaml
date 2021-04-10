@@ -1,0 +1,25 @@
+name: jreleaser
+base: core18
+version: 0.1.0
+license: Apache-2.0
+grade: stable
+type: app
+confinement: strict
+summary: Release Java projects quickly and easily with JReleaser
+description: Release Java projects quickly and easily with JReleaser
+
+apps:
+  jreleaser:
+    command: bin/jreleaser
+    environment:
+      JAVA_HOME: $SNAP/usr/lib/jvm/java
+
+parts:
+  jreleaser:
+    plugin: dump
+    source: https://github.com/jreleaser/jreleaser/releases/download/v0.1.0/jreleaser-0.1.0.tar
+    source-checksum: sha256/0739da6d4ecc2af83cdcf3897a3e884f33b42b72644b28bde1ff6adc5357bf18
+    stage-packages:
+      - openjdk-8-jdk
+    organize:
+      usr/lib/jvm/java-8-openjdk*: usr/lib/jvm/java
