@@ -19,7 +19,7 @@ launched via Jbang. Releases may be announced in a variety of channels such as T
 
 apps:
   jreleaser:
-    command: bin/jreleaser
+    command: $SNAP/bin/jreleaser
     environment:
       JAVA_HOME: "$SNAP/usr/lib/jvm/java/jre/"
       PATH: "$SNAP/bin:$PATH:$SNAP/usr/lib/jvm/java/jre/bin"
@@ -39,5 +39,5 @@ parts:
     organize:
       'usr/lib/jvm/java-8-openjdk*': 'usr/lib/jvm/java'
     prime:
-      - -usr/lib/jvm/java/lib/security/cacerts
-      - -usr/lib/jvm/java/jre/lib/security/cacerts
+        - -usr/lib/jvm/java/lib/security/cacerts
+        - -usr/lib/jvm/java/jre/lib/security/cacerts
