@@ -7,15 +7,14 @@ type: app
 confinement: strict
 summary: Release Java projects quickly and easily with JReleaser
 description: |
-JReleaser is a release automation tool for Java projects. Its goal is to simplify creating releases
-and publishing artifacts to multiple package managers while providing customizable options.
-
-JReleaser takes inputs from popular builds tools (Ant, Maven, Gradle) such as JAR files, binary
-distributions (.zip, .tar), JLink images, or any other file that you’d like to publish as a Git
-release on popular Git services such as Github or Gitlab. Distribution files can additionally be
-published to be consumed by popular package managers as Homebrew, Snapcraft, or get ready to be
-launched via Jbang. Releases may be announced in a variety of channels such as Twitter, Zulip, or SDKMAN!
-
+  JReleaser is a release automation tool for Java projects. Its goal is to simplify creating releases
+  and publishing artifacts to multiple package managers while providing customizable options.
+  
+  JReleaser takes inputs from popular builds tools (Ant, Maven, Gradle) such as JAR files, binary
+  distributions (.zip, .tar), JLink images, or any other file that you’d like to publish as a Git
+  release on popular Git services such as Github or Gitlab. Distribution files can additionally be
+  published to be consumed by popular package managers as Homebrew, Snapcraft, or get ready to be
+  launched via Jbang. Releases may be announced in a variety of channels such as Twitter, Zulip, or SDKMAN!
 
 apps:
   jreleaser:
@@ -39,5 +38,5 @@ parts:
     organize:
       'usr/lib/jvm/java-8-openjdk*': 'usr/lib/jvm/java'
     prime:
-        - -usr/lib/jvm/java/lib/security/cacerts
-        - -usr/lib/jvm/java/jre/lib/security/cacerts
+      - -usr/lib/jvm/java/lib/security/cacerts
+      - -usr/lib/jvm/java/jre/lib/security/cacerts
