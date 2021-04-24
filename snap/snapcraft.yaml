@@ -25,6 +25,8 @@ parts:
       mv jreleaser-0.2.0/bin $SNAPCRAFT_PART_INSTALL/bin
       mv jreleaser-0.2.0/lib $SNAPCRAFT_PART_INSTALL/lib
       snapcraftctl set-version "0.2.0"
+    build-packages:
+      - wget
     stage-packages:
       - openjdk-8-jre
       - ca-certificates
