@@ -28,6 +28,8 @@ parts:
       - ca-certificates
       - ca-certificates-java
     organize:
+      'jreleaser-0.2.0/bin': bin
+      'jreleaser-0.2.0/lib': lib
       'usr/lib/jvm/java-8-openjdk*': 'usr/lib/jvm/java'
     prime:
       - -usr/lib/jvm/java/lib/security/cacerts
