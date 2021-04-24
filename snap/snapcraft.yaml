@@ -1,5 +1,5 @@
 name: jreleaser
-version: 0.2.0
+version: '0.2.0'
 summary: Release Java projects quickly and easily with JReleaser
 description: |
   Release Java projects quickly and easily with JReleaser
@@ -11,10 +11,10 @@ type: app
 
 apps:
   jreleaser:
-    command: $SNAP/bin/jreleaser
+    command: $SNAP/jreleaser-0.2.0/bin/jreleaser
     environment:
       JAVA_HOME: "$SNAP/usr/lib/jvm/java/jre/"
-      PATH: "$SNAP/bin:$PATH:$SNAP/usr/lib/jvm/java/jre/bin"
+      PATH: "$SNAP/jreleaser-0.2.0/bin:$PATH:$SNAP/usr/lib/jvm/java/jre/bin"
 
 parts:
   jreleaser:
