@@ -18,18 +18,18 @@ apps:
 
 parts:
   jreleaser:
-    plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v0.2.0/jreleaser-0.2.0.tgz
-    source-checksum: sha256/5ea59f93dd44945d6b4cf82c3677b2a5b5a8ef88701d071ecbe143d98e6b6bf4
-    build-packages:
-      - wget
+    plugin: nil
+    override-build: |
+      wget --quiet https://github.com/jreleaser/jreleaser/releases/download/v0.2.0/jreleaser-0.2.0.tgz -O jreleaser-0.2.0.tgz
+      tar xvfz jreleaser-0.2.0.tgz
+      mv jreleaser-0.2.0/bin $SNAPCRAFT_PART_INSTALL/bin
+      mv jreleaser-0.2.0/lib $SNAPCRAFT_PART_INSTALL/lib
+      snapcraftctl set-version "0.2.0"
     stage-packages:
       - openjdk-8-jre
       - ca-certificates
       - ca-certificates-java
     organize:
-      'jreleaser-0.2.0/bin': bin
-      'jreleaser-0.2.0/lib': lib
       'usr/lib/jvm/java-8-openjdk*': 'usr/lib/jvm/java'
     prime:
       - -usr/lib/jvm/java/lib/security/cacerts
