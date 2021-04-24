@@ -22,8 +22,7 @@ parts:
     override-build: |
       wget --quiet https://github.com/jreleaser/jreleaser/releases/download/v0.2.0/jreleaser-0.2.0.tgz -O jreleaser-0.2.0.tgz
       tar xvfz jreleaser-0.2.0.tgz
-      mv jreleaser-0.2.0/bin $SNAPCRAFT_PART_INSTALL/bin
-      mv jreleaser-0.2.0/lib $SNAPCRAFT_PART_INSTALL/lib
+      mv jreleaser-0.2.0/lib $SNAPCRAFT_PART_INSTALL/jreleaser-0.2.0
       snapcraftctl set-version "0.2.0"
     build-packages:
       - wget
@@ -32,6 +31,8 @@ parts:
       - ca-certificates
       - ca-certificates-java
     organize:
+      'jreleaser-0.2.0/bin': bin
+      'jreleaser-0.2.0/lib': lib
       'usr/lib/jvm/java-8-openjdk*': 'usr/lib/jvm/java'
     prime:
       - -usr/lib/jvm/java/lib/security/cacerts
