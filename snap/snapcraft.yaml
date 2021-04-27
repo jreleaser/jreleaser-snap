@@ -1,13 +1,20 @@
 name: jreleaser
+base: core18
 version: '0.2.0'
+license: Apache-2.0
+grade: stable
+type: app
+confinement: strict
 summary: Release Java projects quickly and easily with JReleaser
 description: |
-  Release Java projects quickly and easily with JReleaser
-
-grade: stable
-confinement: strict
-base: core20
-type: app
+  JReleaser is a release automation tool for Java projects. Its goal is to simplify creating releases
+  and publishing artifacts to multiple package managers while providing customizable options.
+  
+  JReleaser takes inputs from popular builds tools (Ant, Maven, Gradle) such as JAR files, binary
+  distributions (.zip, .tar), JLink images, or any other file that you’d like to publish as a Git
+  release on popular Git services such as Github or Gitlab. Distribution files can additionally be
+  published to be consumed by popular package managers as Homebrew, Snapcraft, or get ready to be
+  launched via Jbang. Releases may be announced in a variety of channels such as Twitter, Zulip, or SDKMAN!
 
 apps:
   jreleaser:
@@ -15,24 +22,20 @@ apps:
     environment:
       JAVA_HOME: "$SNAP/usr/lib/jvm/java/jre/"
       PATH: "$SNAP/bin:$PATH:$SNAP/usr/lib/jvm/java/jre/bin"
+    plugs:
+      - network
+      - home
 
 parts:
   jreleaser:
-    plugin: nil
-    override-build: |
-      wget --quiet https://github.com/jreleaser/jreleaser/releases/download/v0.2.0/jreleaser-0.2.0.tgz -O jreleaser-0.2.0.tgz
-      tar xvfz jreleaser-0.2.0.tgz
-      mv jreleaser-0.2.0/lib $SNAPCRAFT_PART_INSTALL/jreleaser-0.2.0
-      snapcraftctl set-version "0.2.0"
-    build-packages:
-      - wget
+    plugin: dump
+    source: https://github.com/jreleaser/jreleaser/releases/download/v0.2.0/jreleaser-0.2.0.tgz
+    source-checksum: sha256/5ea59f93dd44945d6b4cf82c3677b2a5b5a8ef88701d071ecbe143d98e6b6bf4
     stage-packages:
       - openjdk-8-jre
       - ca-certificates
       - ca-certificates-java
     organize:
-      'jreleaser-0.2.0/bin': bin
-      'jreleaser-0.2.0/lib': lib
       'usr/lib/jvm/java-8-openjdk*': 'usr/lib/jvm/java'
     prime:
       - -usr/lib/jvm/java/lib/security/cacerts
