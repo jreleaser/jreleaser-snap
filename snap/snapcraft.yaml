@@ -1,10 +1,5 @@
 name: jreleaser
-base: core18
-version: '0.2.0'
-license: Apache-2.0
-grade: stable
-type: app
-confinement: strict
+version: 0.3.0
 summary: Release Java projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool for Java projects. Its goal is to simplify creating releases
@@ -15,6 +10,11 @@ description: |
   release on popular Git services such as Github or Gitlab. Distribution files can additionally be
   published to be consumed by popular package managers as Homebrew, Snapcraft, or get ready to be
   launched via Jbang. Releases may be announced in a variety of channels such as Twitter, Zulip, or SDKMAN!
+
+grade: stable
+confinement: strict
+base: core18
+type: app
 
 apps:
   jreleaser:
@@ -29,8 +29,8 @@ apps:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v0.2.0/jreleaser-0.2.0.tgz
-    source-checksum: sha256/5ea59f93dd44945d6b4cf82c3677b2a5b5a8ef88701d071ecbe143d98e6b6bf4
+    source: https://github.com/jreleaser/jreleaser/releases/download/v0.3.0/jreleaser-0.3.0.tar
+    source-checksum: sha256/7ae48e0666170b0fb81800f7079231b87030e4f834903711b6c89be9f2cb65ce
     stage-packages:
       - openjdk-8-jre
       - ca-certificates
