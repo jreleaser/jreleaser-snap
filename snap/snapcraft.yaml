@@ -18,10 +18,10 @@ type: app
 
 apps:
   jreleaser:
-    command: $SNAP/bin/jreleaser
+    command: bin/jreleaser
     environment:
-      JAVA_HOME: "$SNAP/usr/lib/jvm/java/jre/"
-      PATH: "$SNAP/bin:$PATH:$SNAP/usr/lib/jvm/java/jre/bin"
+      JAVA_HOME: "/usr/lib/jvm/java/jre/"
+      PATH: "/bin:$PATH:/usr/lib/jvm/java/jre/bin"
     plugs:
       - network
       - home
@@ -32,6 +32,7 @@ parts:
     source: https://github.com/jreleaser/jreleaser/releases/download/v0.3.0/jreleaser-0.3.0.tar
     source-checksum: sha256/7ae48e0666170b0fb81800f7079231b87030e4f834903711b6c89be9f2cb65ce
     stage-packages:
+      - curl
       - openjdk-8-jre
       - ca-certificates
       - ca-certificates-java
