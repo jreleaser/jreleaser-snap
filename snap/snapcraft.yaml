@@ -1,5 +1,5 @@
 name: jreleaser
-version: 0.3.0
+version: 0.4.0
 summary: Release Java projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool for Java projects. Its goal is to simplify creating releases
@@ -18,10 +18,10 @@ type: app
 
 apps:
   jreleaser:
-    command: bin/jreleaser
+    command: $SNAP/bin/jreleaser
     environment:
-      JAVA_HOME: "/usr/lib/jvm/java/jre/"
-      PATH: "/bin:$PATH:/usr/lib/jvm/java/jre/bin"
+      JAVA_HOME: "$SNAP/usr/lib/jvm/java/jre/"
+      PATH: "$SNAP/bin:$PATH:$SNAP/usr/lib/jvm/java/jre/bin"
     plugs:
       - network
       - home
@@ -29,10 +29,9 @@ apps:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v0.3.0/jreleaser-0.3.0.tar
-    source-checksum: sha256/7ae48e0666170b0fb81800f7079231b87030e4f834903711b6c89be9f2cb65ce
+    source: https://github.com/jreleaser/jreleaser/releases/download/v0.4.0/jreleaser-0.4.0.tar
+    source-checksum: sha256/afc2b7bdb003ba7fad8ba25c8f061df55628a895a8dff4e45bfa3f22ac76f429
     stage-packages:
-      - curl
       - openjdk-8-jre
       - ca-certificates
       - ca-certificates-java
