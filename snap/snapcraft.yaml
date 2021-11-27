@@ -1,8 +1,8 @@
 name: jreleaser
-version: 0.8.0
-summary: Release Java projects quickly and easily with JReleaser
+version: 0.9.0
+summary: Release projects quickly and easily with JReleaser
 description: |
-  JReleaser is a release automation tool for Java projects. Its goal is to simplify creating releases
+  JReleaser is a release automation tool. Its goal is to simplify creating releases
   and publishing artifacts to multiple package managers while providing customizable options.
   
   JReleaser takes inputs from popular builds tools (Ant, Maven, Gradle) such as JAR files, binary
@@ -29,8 +29,8 @@ apps:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v0.8.0/jreleaser-0.8.0.tar
-    source-checksum: sha256/e4ca0980258f11da4d538ad4ba49364404c3c472bcdffa4cb0a4225e5455b81c
+    source: https://github.com/jreleaser/jreleaser/releases/download/v0.9.0/jreleaser-0.9.0.tar
+    source-checksum: sha256/e3445044083a318c0bce98193f53f6bd77c68039d2e52a75632cabf9d7853c05
     stage-packages:
       - curl
       - openjdk-8-jre
