@@ -1,15 +1,16 @@
 name: jreleaser
-version: 0.9.0
+version: 0.9.1
 summary: Release projects quickly and easily with JReleaser
 description: |
-  JReleaser is a release automation tool. Its goal is to simplify creating releases
-  and publishing artifacts to multiple package managers while providing customizable options.
+  JReleaser is a release automation tool. Its goal is to simplify creating releases and
+  publishing artifacts to multiple package managers while providing customizable options.
   
-  JReleaser takes inputs from popular builds tools (Ant, Maven, Gradle) such as JAR files, binary
-  distributions (.zip, .tar), JLink images, or any other file that you’d like to publish as a Git
-  release on popular Git services such as Github or Gitlab. Distribution files can additionally be
-  published to be consumed by popular package managers as Homebrew, Snapcraft, or get ready to be
-  launched via JBang. Releases may be announced in a variety of channels such as Twitter, Zulip, or SDKMAN!
+  JReleaser takes inputs from popular builds tools (Ant, Maven, Gradle) such as JAR files,
+  binary distributions (.zip, .tar), JLink images, or any other file that you’d like to
+  publish as a Git release on popular Git services such as GitHub, GitLab, or Gitea.
+  Distribution files may additionally be published to be consumed by popular package managers
+  such as Homebrew, Chocolatey, Snapcraft, or get ready to be launched via JBang. Releases
+  may be announced in a variety of channels such as Twitter, Zulip, SDKMAN!, and more.
 
 grade: stable
 confinement: strict
@@ -29,8 +30,8 @@ apps:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v0.9.0/jreleaser-0.9.0.tar
-    source-checksum: sha256/e3445044083a318c0bce98193f53f6bd77c68039d2e52a75632cabf9d7853c05
+    source: https://github.com/jreleaser/jreleaser/releases/download/v0.9.1/jreleaser-0.9.1.tar
+    source-checksum: sha256/91b59a673137b2d42f0117a410a893dddf2fb9e56495b74ea94c4576863b55b2
     stage-packages:
       - curl
       - openjdk-8-jre
