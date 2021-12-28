@@ -1,5 +1,6 @@
+# Generated with JReleaser 0.10.0-SNAPSHOT at 2021-12-28T14:52:05.57129Z
 name: jreleaser
-version: 0.9.1
+version: 0.10.0
 summary: Release projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool. Its goal is to simplify creating releases and
@@ -30,15 +31,13 @@ apps:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v0.9.1/jreleaser-0.9.1.tar
-    source-checksum: sha256/91b59a673137b2d42f0117a410a893dddf2fb9e56495b74ea94c4576863b55b2
+    source: https://github.com/jreleaser/jreleaser/releases/download/v0.10.0/jreleaser-0.10.0.tar
+    source-checksum: sha256/ac6d5c0793d33d923581ef40da80b33b88e43334061fd9063733c3bad0d7bf8e
     stage-packages:
       - curl
       - openjdk-8-jre
       - ca-certificates
       - ca-certificates-java
-    organize:
-      'usr/lib/jvm/java-8-openjdk*': 'usr/lib/jvm/java'
     prime:
-      - -usr/lib/jvm/java/lib/security/cacerts
-      - -usr/lib/jvm/java/jre/lib/security/cacerts
+      - -usr/lib/jvm/java-*/lib/security/cacerts
+      - -usr/lib/jvm/java-*/jre/lib/security/cacerts
