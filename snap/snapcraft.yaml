@@ -1,6 +1,6 @@
-# Generated with JReleaser 1.0.0-SNAPSHOT at 2022-01-22T09:46:39.196814Z
+# Generated with JReleaser 1.0.0-SNAPSHOT at 2022-02-13T12:11:01.494659Z
 name: jreleaser
-version: 1.0.0-M1
+version: 1.0.0-M2
 summary: Release projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool. Its goal is to simplify creating releases and
@@ -19,29 +19,34 @@ base: core18
 type: app
 
 architectures:
-  - build-on: [amd64]
+  - build-on: [amd64, arm64]
     
     
 apps:
   jreleaser:
-    command: $SNAP/bin/jreleaser
+    command: bin/jreleaser
     environment:
-      JAVA_HOME: "$SNAP/usr/lib/jvm/java/jre/"
-      PATH: "$SNAP/bin:$PATH:$SNAP/usr/lib/jvm/java/jre/bin"
+      JAVA_HOME: "$SNAP/usr/lib/jvm/java"
+      PATH: "$SNAP/bin:$PATH:$JAVA_HOME/bin"
     plugs:
+      - dot-config-files
       - network
       - home
 
+plugs:
+  dot-config-files:
+    interface: personal-files
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v1.0.0-M1/jreleaser-1.0.0-M1.tar
-    source-checksum: sha256/fadea6015be5524283fb8c0caced1fcada8a2a414a5b27ca93026178954b0884
+    source: https://github.com/jreleaser/jreleaser/releases/download/v1.0.0-M2/jreleaser-1.0.0-M2.tar
+    source-checksum: sha256/16aa2e344db4e207ebe0074e3ca21b6e6aeabf80fe78b6ccd7846f594ed9e919
     stage-packages:
       - curl
       - openjdk-8-jre
       - ca-certificates
       - ca-certificates-java
+    organize:
+      'usr/lib/jvm/java-*': 'usr/lib/jvm/java'
     prime:
-      - -usr/lib/jvm/java-*/lib/security/cacerts
-      - -usr/lib/jvm/java-*/jre/lib/security/cacerts
+      - -usr/lib/jvm/java/lib/security/cacerts
