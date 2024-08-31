@@ -1,6 +1,6 @@
-# Generated with JReleaser 1.14.0-SNAPSHOT at 2024-06-30T13:00:04.112802098Z
+# Generated with JReleaser 1.14.0-SNAPSHOT at 2024-08-31T07:00:25.327300349Z
 name: jreleaser
-version: "1.13.1"
+version: "1.14.0"
 summary: Release projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool. Its goal is to simplify creating releases and
@@ -36,11 +36,17 @@ apps:
 plugs:
   dot-config-files:
     interface: personal-files
+    read:
+      - $HOME/.gnupg
+      - $HOME/.gitconfig
+      - $HOME/.config/jgit
+    write:
+      - $HOME/.jreleaser
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v1.13.1/jreleaser-1.13.1.tar
-    source-checksum: sha256/9511fefbf373e6aa312e677ef3d5f34a981b7bdb9c5f82de26169d931269848e
+    source: https://github.com/jreleaser/jreleaser/releases/download/v1.14.0/jreleaser-1.14.0.tar
+    source-checksum: sha256/ab2bc1bf444f74ab079411480a2fa2aa4e1c6b0c153b3cd97d4a11f7568e7885
     stage-packages:
       - curl
       - openjdk-8-jre
