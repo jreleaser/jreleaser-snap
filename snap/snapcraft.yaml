@@ -1,6 +1,6 @@
-# Generated with JReleaser 1.23.0-SNAPSHOT at 2026-02-28T07:45:23.249774677Z
+# Generated with JReleaser 1.24.0-SNAPSHOT at 2026-04-30T11:17:23.903587413Z
 name: jreleaser
-version: "1.23.0"
+version: "1.24.0"
 summary: Release projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool. Its goal is to simplify creating releases and
@@ -26,7 +26,7 @@ apps:
   jreleaser:
     command: bin/jreleaser
     environment:
-      JAVA_HOME: "$SNAP/usr/lib/jvm/java"
+      JAVA_HOME: "$SNAP/usr/lib/jvm/java-8-openjdk-${SNAP_ARCH}"
       PATH: "$SNAP/bin:$PATH:$JAVA_HOME/bin"
     plugs:
       - dot-config-files
@@ -45,8 +45,8 @@ plugs:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v1.23.0/jreleaser-1.23.0.tar
-    source-checksum: sha256/433834af2befab0ae170c57a23c21ab731b446313e78b757e722f26d8e45fbda
+    source: https://github.com/jreleaser/jreleaser/releases/download/v1.24.0/jreleaser-1.24.0.tar
+    source-checksum: sha256/823bad2c1868f1bb2f272415bc40f78c7d8bdf89511070db59c47196cb916e1b
     stage-packages:
       - curl
       - openjdk-8-jre
