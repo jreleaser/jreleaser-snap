@@ -1,6 +1,6 @@
-# Generated with JReleaser 1.24.0-SNAPSHOT at 2026-04-30T11:17:23.903587413Z
+# Generated with JReleaser 1.25.0-SNAPSHOT at 2026-06-29T07:57:31.988946286Z
 name: jreleaser
-version: "1.24.0"
+version: "1.25.0"
 summary: Release projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool. Its goal is to simplify creating releases and
@@ -45,8 +45,8 @@ plugs:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v1.24.0/jreleaser-1.24.0.tar
-    source-checksum: sha256/823bad2c1868f1bb2f272415bc40f78c7d8bdf89511070db59c47196cb916e1b
+    source: https://github.com/jreleaser/jreleaser/releases/download/v1.25.0/jreleaser-1.25.0.tar
+    source-checksum: sha256/28d30621076aa93e0f3de212c1cb248eaf19bd479f5db56ea248f310866ac1bb
     stage-packages:
       - curl
       - openjdk-8-jre
