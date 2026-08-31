@@ -1,6 +1,6 @@
-# Generated with JReleaser 1.25.0-SNAPSHOT at 2026-06-29T07:57:31.988946286Z
+# Generated with JReleaser 1.26.0-SNAPSHOT at 2026-08-31T07:37:41.529332195Z
 name: jreleaser
-version: "1.25.0"
+version: "1.26.0"
 summary: Release projects quickly and easily with JReleaser
 description: |
   JReleaser is a release automation tool. Its goal is to simplify creating releases and
@@ -13,14 +13,20 @@ description: |
   such as Homebrew, Chocolatey, Snapcraft, or get ready to be launched via JBang. Releases
   may be announced in a variety of channels such as Twitter, Zulip, SDKMAN!, and more.
 
+title: Jreleaser
+license: Apache-2.0
+issues: https://github.com/jreleaser/jreleaser/issues
+source-code: https://github.com/jreleaser/jreleaser
+website: https://jreleaser.org
+
 grade: stable
 confinement: strict
-base: core18
+base: core24
 type: app
 
-architectures:
-  - build-on: [amd64, arm64]
-    
+platforms:
+  amd64:
+    build-on: [amd64, arm64]
     
 apps:
   jreleaser:
@@ -45,8 +51,8 @@ plugs:
 parts:
   jreleaser:
     plugin: dump
-    source: https://github.com/jreleaser/jreleaser/releases/download/v1.25.0/jreleaser-1.25.0.tar
-    source-checksum: sha256/28d30621076aa93e0f3de212c1cb248eaf19bd479f5db56ea248f310866ac1bb
+    source: https://github.com/jreleaser/jreleaser/releases/download/v1.26.0/jreleaser-1.26.0.tar
+    source-checksum: sha256/07bab0d0e49dae9f3e6e803c8e51a08aec1b177afdea77f660707bb608102059
     stage-packages:
       - curl
       - openjdk-8-jre
